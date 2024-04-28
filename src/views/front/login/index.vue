@@ -1,8 +1,8 @@
 <template>
-    <div >前台首页</div>
+    <div >登录页</div>
 </template>
 
-<script setup>
+<script setup lang='ts'>
 // import { ref } from 'vue';
 </script>
 
