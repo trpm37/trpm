@@ -31,7 +31,25 @@ export const backRouter = [
   {
     path: "/admin",
     name: "admin",
-    component: () => import("@/views/back/home.vue")
+    component: () => import("@/layouts/back/index.vue"),
+    redirect: "scene",
+    children:[
+      {
+        path: "/admin/scene",
+        name: "scene",
+        component: () => import("@/views/back/scene/index.vue"),
+      },
+      {
+        path: "/admin/hotspot",
+        name: "hotspot",
+        component: () => import("@/views/back/hotspot/index.vue"),
+      },
+      {
+        path: "/admin/model",
+        name: "model",
+        component: () => import("@/views/back/model/index.vue"),
+      }
+    ]
   }
 ];
 

@@ -6,10 +6,10 @@ export const useGlobalStore = defineStore({
   id: "3d-global",
   // 修改默认值之后，需清除 localStorage 数据
   state: () => ({
-    // 布局模式 (纵向：vertical | 经典：classic | 横向：transverse | 分栏：columns | 自定义知识库后台：portal)
-    layout: "portal",
+    // 布局模式 (default | 数字人：dhuman)
+    layout: "default",
     // element 组件大小 'large' | 'default' | 'small'
-    assemblySize: "large",
+    assemblySize: "default",
     // 当前系统语言
     language: null,
     // 当前页面是否全屏
