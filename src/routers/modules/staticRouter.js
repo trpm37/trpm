@@ -1,26 +1,30 @@
 
 import { HOME_URL, LOGIN_URL } from "@/config";
 
+let meta={
+  title: "元宇宙", 
+  isHide: false,      
+  isKeepAlive: false          
+};
 /**
  * frontRouter (前台页面路由)
  */
 export const frontRouter = [
   {
     path: "/",
-    redirect: HOME_URL
+    redirect: {name:"home"}
   },
   {
     path: HOME_URL,
     name: "home",
-    component: () => import("@/views/front/home.vue")
+    component: () => import("@/views/front/home.vue"),
+    meta:Object.assign({},meta,{title:"首页"}),
   },
   {
     path: LOGIN_URL,
     name: "login",
     component: () => import("@/views/front/login/index.vue"),
-    meta: {
-      title: "登录/注册"
-    }
+    meta:Object.assign({},meta,{title:"登录/注册"}),
   }
 ];
 
@@ -29,25 +33,35 @@ export const frontRouter = [
  */
 export const backRouter = [
   {
-    path: "/admin",
+    path: "/admin/:id",
     name: "admin",
     component: () => import("@/layouts/back/index.vue"),
-    redirect: "scene",
+    redirect: {name:"scene"},
+    meta:Object.assign({},meta,{title:"管理首页"}),
     children:[
       {
-        path: "/admin/scene",
+        path: "/admin/:id/scene",
         name: "scene",
         component: () => import("@/views/back/scene/index.vue"),
+        meta:Object.assign({},meta,{title:"场景"})
       },
       {
-        path: "/admin/hotspot",
+        path: "/admin/:id/hotspot",
         name: "hotspot",
         component: () => import("@/views/back/hotspot/index.vue"),
+        meta:Object.assign({},meta,{title:"热点"})
       },
       {
-        path: "/admin/model",
+        path: "/admin/:id/model",
         name: "model",
         component: () => import("@/views/back/model/index.vue"),
+        meta:Object.assign({},meta,{title:"模型"})
+      },
+      {
+        path: "/admin/:id/daolan",
+        name: "daolan",
+        component: () => import("@/views/back/daolan/index.vue"),
+        meta:Object.assign({},meta,{title:"导览"})
       }
     ]
   }

@@ -48,5 +48,5 @@ export const useGlobalStore = defineStore({
       this.$patch({ [args[0]]: args[1] });
     }
   },
-  persist: piniaPersistConfig("3d-global")
+  // persist: piniaPersistConfig("3d-global")
 });

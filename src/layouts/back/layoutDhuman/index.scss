@@ -1,59 +1,69 @@
-.page {
+.layout-dhuman {
   --color: #fff;
   --bk-color: #171719;
   --bk-color2: #28282b;
   --bk-color3: #353538;
-  --font-size:12px;
+  --font-size: 12px;
 
   display: flex;
+  width: 100%;
+  height: 100%;
   padding: 0 10px 10px 10px;
   background-color: var(--bk-color);
   color: var(--color);
   font-size: var(--font-size);
-}
-.page-container {
-  .top-box {
-    --el-header-padding: 0px;
-    --el-header-height: 42px;
-    .btn {
-      color: #fff;
-      &:hover {
-        background-color: var(--bk-color3);
+  // 布局
+  .layout-container {
+    width: 100%;
+    .layout-top {
+      --el-header-padding: 0px;
+      --el-header-height: 42px;
+      .btn {
+        color: #fff;
+        &:hover {
+          background-color: var(--bk-color3);
+        }
       }
     }
+    .layout-main {
+      --el-main-padding: 0px;
+      display: flex;
+    }
   }
-  .plane-box {
-    --el-main-padding: 0px;
+  //面板
+  .main-plane {
+    width: 100%;
     display: flex;
-    .main-plane {
-      .lf-plane,
-      .rg-plane {
-        width: auto;
-        min-width: 42px;
-        background-color: var(--bk-color2);
-        border-radius: 8px 0px 0px 8px;
-        backdrop-filter: blur(6px);
-      }
-      .rg-plane {
-        width: 270px;
-        border-radius: 0px 8px 8px 0px;
-      }
-      .ct-plane {
-      }
+    .lf-plane,
+    .rg-plane {
+      width: auto;
+      min-width: 42px;
+      background-color: var(--bk-color2);
+      border-radius: 8px 0px 0px 8px;
+      backdrop-filter: blur(6px);
+    }
+    .lf-plane {
+      display: flex;
+    }
+    .rg-plane {
+      width: 270px;
+      border-radius: 0px 8px 8px 0px;
+    }
+    .ct-plane {
+      display: flex;
     }
   }
-}
-
-.lf-plane {
-  display: flex;
+  // 左侧菜单
   .menus {
     display: flex;
     flex-direction: column;
     padding: 8px 0;
-    .ul {      
-      :deep(.el-scrollbar){
+    .ul {
+      .el-scrollbar {
         padding: 0 4px;
-        .el-scrollbar__bar.is-vertical{width: 2px;}
+        .el-scrollbar__bar.is-vertical {
+          width: 2px;
+        }
       }
       .li {
         display: flex;
@@ -70,16 +80,23 @@
         .iconfont {
           font-size: 14px;
         }
-        .txt{ margin-top: 6px;   zoom: 0.9;}
+        .txt {
+          margin-top: 6px;
+          zoom: 0.9;
+        }
       }
     }
-    .ul.top-ul{
+    .ul.top-ul {
       flex: 1;
       overflow: hidden;
     }
+    .ul.bottom-ul {
+      padding: 0 4px;
+    }
   }
-}
-.rg-plane {
-}
-.ct-plane {
+  // 子菜单
+  .sub-menus {
+    width: 248px;
+    background-color: var(--bk-color3);
+  }
 }

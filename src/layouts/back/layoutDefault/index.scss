@@ -3,7 +3,6 @@
   --bk-color: #171719;
   --bk-color2: #28282b;
   --bk-color3: #353538;
-  --font-size: 12px;
 
   display: flex;
   width: 100%;
@@ -35,22 +34,27 @@
     width: 100%;
     display: flex;
     .lf-plane,
-    .rg-plane {
+    .rg-plane,
+    .bm-plane {
       width: auto;
-      min-width: 42px;
       background-color: var(--bk-color2);
       border-radius: 8px 0px 0px 8px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: var(--blur);
     }
     .lf-plane {
+      min-width: 42px;
       display: flex;
     }
     .rg-plane {
-      width: 270px;
       border-radius: 0px 8px 8px 0px;
     }
+    .bm-plane {
+      border-radius: 0px;
+    }
     .ct-plane {
+      --el-main-padding: 0;
       display: flex;
+      flex-direction: column;
     }
   }
   // 左侧菜单
@@ -98,5 +102,25 @@
   .sub-menus {
     width: 248px;
     background-color: var(--bk-color3);
+  }
+  .edit-plane {
+    width: 270px;
+  }
+  .view-plane {
+    flex: 1;
+    position: relative;
+    .view-list {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 2;
+      width: 100px;
+      padding: 2px 5px 2px 10px;
+      background-color: var(--bk-color2);
+      border-radius: var(--radius);
+      backdrop-filter: var(--blur);
+    }
   }
 }
