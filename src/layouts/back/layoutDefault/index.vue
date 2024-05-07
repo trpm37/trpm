@@ -27,7 +27,6 @@
 <script setup>
 // import { ref } from 'vue';
 </script>
-
 <style>
 @import "./index.scss";
 </style>

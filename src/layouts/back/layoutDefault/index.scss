@@ -1,5 +1,6 @@
 .layout-default {
   --color: #fff;
+  --color-yellow:#F7B500;
   --bk-color: #171719;
   --bk-color2: #28282b;
   --bk-color3: #353538;
@@ -11,6 +12,45 @@
   background-color: var(--bk-color);
   color: var(--color);
   font-size: var(--font-size);
+  .mg-t{margin-top: 10px;}
+  .mg-b{margin-bottom: 10px;}
+  .inp{
+    --el-input-text-color: var(--color);
+    --el-text-color-placeholder: var(--color);
+    --el-input-bg-color: var(--bk-color2);
+    --el-input-border-color: transparent;
+    --el-input-hover-border-color: var(--color-blue);
+    --el-input-border-radius:var(--radius);
+    --el-input-height: 32px;
+  }
+  .switch {
+    --el-switch-on-color: var(--color-blue);
+    --el-switch-off-color: var(--bk-color2);
+  }
+  .edit-card {
+    --el-card-border-color: transparent;
+    --el-card-border-radius: var(--radius);;
+    --el-card-padding: 12px;
+    --el-card-bg-color: var(--bk-color3);
+    color: var(--color);
+    .el-card__header{border-bottom:none;padding-bottom: 0;}
+    .card-tl{.lab{line-height: 1px;}}
+    .card-sub_tl{margin-bottom: 10px;}
+    .card-ts{margin-top: 6px;color: var(--color-yellow);}
+    .icon{display: inline-block;cursor: pointer;}
+    .arrow{
+      margin-right: 4px;
+      margin-bottom: -2px;
+    }
+  }
+  .edit-card.fold {
+    .el-card__header{padding-bottom: 12px;}
+    .el-card__body{display: none;}
+    .arrow{
+      transform: rotate(-90deg);
+    }
+  }
+
   // 布局
   .layout-container {
     width: 100%;
@@ -18,7 +58,7 @@
       --el-header-padding: 0px;
       --el-header-height: 42px;
       .btn {
-        color: #fff;
+        color: var(--color);
         &:hover {
           background-color: var(--bk-color3);
         }
@@ -104,7 +144,29 @@
     background-color: var(--bk-color3);
   }
   .edit-plane {
+    display: flex;
     width: 270px;
+    height: 100%;
+    .box {
+      flex: 1;
+      .box-h {
+        padding: 10px 12px;
+        .icon{cursor: pointer;}
+        .spread.fold{
+          .iconfont{
+            &::before{content: "\eb3c";}
+          }
+        }
+      }
+      .box-main {
+        flex: 1;
+        padding: 10px;
+      }
+      .box-bm {
+        padding: 12px 10px;
+        .btn{flex: 1;}
+      }
+    }
   }
   .view-plane {
     flex: 1;

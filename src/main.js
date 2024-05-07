@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import "./assets/iconfont/iconfont.css";
+import "../public/iconfont/iconfont.css";
 import './assets/styles/pub.scss'
 import 'element-plus/dist/index.css'
 import ElementPlus from 'element-plus'
