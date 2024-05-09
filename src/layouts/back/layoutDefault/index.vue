@@ -25,7 +25,12 @@
 </template>
 
 <script setup>
-// import { ref } from 'vue';
+// import { provide } from 'vue';
+// import {card_fold,card_folds} from '@/layouts/back/layoutDefault/index';
+// provide('layoutJs', {
+//   card_fold,
+//   card_folds
+// });
 </script>
 <style>
 @import "./index.scss";

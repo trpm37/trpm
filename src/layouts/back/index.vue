@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed,provide } from "vue";
 import { useGlobalStore } from "../../stores/modules/global";
 import com_layoutDefault from "./layoutDefault/index.vue";
 import com_layoutDhuman from "./layoutDhuman/index.vue";
@@ -15,6 +15,12 @@ const com_layout = {
 
 const globalStore = useGlobalStore();
 const layout = computed(() => globalStore.layout);
+
+import {card_fold,card_folds} from './index';
+provide('layoutJs', {
+  card_fold,
+  card_folds
+});
 </script>
 
 <style scoped lang="scss"></style>

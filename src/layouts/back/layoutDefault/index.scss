@@ -1,10 +1,15 @@
 .layout-default {
   --color: #fff;
-  --color-yellow:#F7B500;
+  --color-blue: #307af2;
+  --color-yellow: #f7b500;
   --bk-color: #171719;
   --bk-color2: #28282b;
   --bk-color3: #353538;
-
+  --bk-color4: #49494c;
+  @mixin flex {
+    display: flex;
+    align-items: center;
+  }
   display: flex;
   width: 100%;
   height: 100%;
@@ -12,45 +17,268 @@
   background-color: var(--bk-color);
   color: var(--color);
   font-size: var(--font-size);
-  .mg-t{margin-top: 10px;}
-  .mg-b{margin-bottom: 10px;}
-  .inp{
+  .mg-t {
+    margin-top: 10px;
+  }
+  .mg-b {
+    margin-bottom: 10px;
+  }
+  .inp {
     --el-input-text-color: var(--color);
     --el-text-color-placeholder: var(--color);
     --el-input-bg-color: var(--bk-color2);
     --el-input-border-color: transparent;
     --el-input-hover-border-color: var(--color-blue);
-    --el-input-border-radius:var(--radius);
+    --el-input-border-radius: var(--radius);
     --el-input-height: 32px;
+    .el-input__inner {
+      font-size: 12px;
+    }
+  }
+  .select {
+    --el-fill-color-blank: var(--bk-color2);
+    --el-border-color: var(--bk-color2);
+    --el-border-color-hover: var(--color-blue);
+    --el-text-color-regular: var(--color);
   }
   .switch {
     --el-switch-on-color: var(--color-blue);
     --el-switch-off-color: var(--bk-color2);
   }
+  .inp-group {
+    width: 100%;
+    .lf {
+      padding-right: 5px;
+    }
+    .inps {
+      flex: 1;
+      .inp-cell {
+        position: relative;
+        flex: 1;
+        height: 32px;
+        overflow: hidden;
+        margin-left: 10px;
+        padding: 0 6px;
+        border-radius: 5px;
+        border: 1px solid var(--bk-color2);
+        background-color: var(--bk-color2);
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          border: 1px solid var(--color-blue);
+        }
+        .inp {
+          height: calc(100% - 2px);
+          .el-input-group__prepend,
+          .el-input__wrapper {
+            padding: 0;
+            background-color: transparent;
+            &:hover {
+              box-shadow: none;
+            }
+          }
+          .el-input__wrapper.is-focus{
+            box-shadow: none;
+          }
+          .el-input-group__prepend {
+            margin-right: 4px;
+          }
+          .el-input__inner {
+            border: none;
+            text-align: right;
+          }
+        }
+        .upDown {
+          display: none;
+          flex-direction: column;
+          justify-content: space-between;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          height: 100%;
+          background-color: #49494c;
+          border-radius: var(--radius) 0 0 var(--radius);
+        }
+        &:hover {
+          .upDown {
+            display: flex;
+          }
+        }
+      }
+    }
+    .iconfont{cursor: pointer;}
+  }
+  .img-d {
+    .img {
+      border-radius: var(--radius);
+      background-color: var(--bk-color2);
+    }
+  }
+  .img-up {
+    width: 100%;
+  }
+  .img-up.img-up2 {
+    @include flex;
+    .lf {
+      width: 68px;
+    }
+    .rg {
+      flex: 1;
+      padding-left: 10px;
+    }
+  }
+
   .edit-card {
     --el-card-border-color: transparent;
-    --el-card-border-radius: var(--radius);;
+    --el-card-border-radius: var(--radius);
     --el-card-padding: 12px;
     --el-card-bg-color: var(--bk-color3);
     color: var(--color);
-    .el-card__header{border-bottom:none;padding-bottom: 0;}
-    .card-tl{.lab{line-height: 1px;}}
-    .card-sub_tl{margin-bottom: 10px;}
-    .card-ts{margin-top: 6px;color: var(--color-yellow);}
-    .icon{display: inline-block;cursor: pointer;}
-    .arrow{
+    .el-card__header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .card-tl {
+      .lab {
+        line-height: 1px;
+      }
+    }
+    .card-sub_tl {
+      margin-bottom: 10px;
+    }
+    .card-ts {
+      margin-top: 6px;
+      color: var(--color-yellow);
+    }
+    .icon {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .arrow {
       margin-right: 4px;
       margin-bottom: -2px;
     }
   }
   .edit-card.fold {
-    .el-card__header{padding-bottom: 12px;}
-    .el-card__body{display: none;}
-    .arrow{
+    .el-card__header {
+      padding-bottom: 12px;
+    }
+    .el-card__body {
+      display: none;
+    }
+    .arrow {
       transform: rotate(-90deg);
     }
   }
-
+  .btn.btn2 {
+    color: #fff;
+    background-color: var(--bk-color4);
+    border: 1px solid var(--bk-color4);
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .btn-txt {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: var(--bk-color4);
+      border: 1px solid var(--bk-color4);
+    }
+  }
+  .btn-txt.on {
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+  }
+  .btns-group {
+    @include flex;
+    .btn {
+      flex-grow: 1;
+    }
+  }
+  .btns-group2 {
+    @include flex;
+    padding: 2px;
+    background-color: var(--bk-color);
+    border-radius: var(--radius);
+    .btn {
+      flex: 1;
+      margin: 0;
+    }
+  }
+  .color-d{
+    display: flex;
+    .color-inp{
+      @include flex;
+      flex: 1;
+      padding: 8px 10px;
+      background-color: var(--bk-color2);
+      border-radius: var(--radius);
+      .lf{
+        @include flex;
+        flex: 1;
+      }      
+      .color{width: 16px;height: 16px;margin-right: 5px; border-radius: var(--radius);background-color: #fff;}
+      .reset{
+        display: inline-block;
+        transition: all .7s;
+        cursor: pointer;
+        &:hover{
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .color-btn{
+      position: relative;
+      width: 32px;
+      height: 32px;
+      margin-left: 12px;
+      .el-color-picker{
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        .el-color-picker__trigger{padding: 0;}
+      }
+      .icon-btn{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--radius);
+        background-color: var(--bk-color4);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 62% auto;
+        background-image: url('@/assets/images/color_icon.png');        
+        cursor: pointer;
+      }
+    }
+  }
+  .drag-bar{
+    .el-slider__runway.show-input{margin-right: 14px;}
+    .el-input-number{
+      width: 75px;
+      .el-input__wrapper{
+        padding: 1px 22px;
+        background-color: var(--bk-color4);
+        box-shadow: none;
+        &:hover{box-shadow: none;}
+        .el-input__inner{color: #fff;background-color: var(--bk-color3);}
+      }
+      .el-input-number__decrease,
+      .el-input-number__increase{
+        width: 20px;
+        border: none;
+        background-color: transparent;        
+      }
+    }
+  }
   // 布局
   .layout-container {
     width: 100%;
@@ -67,6 +295,7 @@
     .layout-main {
       --el-main-padding: 0px;
       display: flex;
+      overflow: hidden;
     }
   }
   //面板
@@ -149,22 +378,34 @@
     height: 100%;
     .box {
       flex: 1;
+      overflow: hidden;
       .box-h {
         padding: 10px 12px;
-        .icon{cursor: pointer;}
-        .spread.fold{
-          .iconfont{
-            &::before{content: "\eb3c";}
+        font-size: 14px;
+        .icon {
+          cursor: pointer;
+        }
+        .spread.fold {
+          .iconfont {
+            &::before {
+              content: "\eb3c";
+            }
           }
         }
       }
       .box-main {
         flex: 1;
-        padding: 10px;
+        padding: 0 0 0 10px;
+        overflow: hidden;
+        .el-scrollbar {
+          padding-right: 10px;
+        }
       }
       .box-bm {
         padding: 12px 10px;
-        .btn{flex: 1;}
+        .btn {
+          flex: 1;
+        }
       }
     }
   }
@@ -185,4 +426,11 @@
       backdrop-filter: var(--blur);
     }
   }
+}
+
+.select-popper-dark {
+  --el-bg-color-overlay: #28282b;
+  --el-border-color-light: #28282b;
+  --el-fill-color-light: #28282b;
+  --el-text-color-regular: #fff;
 }
