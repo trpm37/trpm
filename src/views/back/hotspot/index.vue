@@ -186,6 +186,12 @@
                     <div class="drag-bar">
                       <el-slider v-model="value4" show-input size="small" :show-tooltip="false"/>
                     </div>
+                    <div class="card-sub_tl cell mg-t">
+                      <div class="lf"><span class="lab">范围</span></div>
+                    </div>
+                    <div class="drag-bar" id="slider1">
+    
+                    </div>
                     <div class="cell mg-t">
                       <div class="lf"><span class="lab">视频抠图</span></div>
                       <div class="rg">
@@ -293,10 +299,11 @@
 </template>
 
 <script setup>
-import { ref, computed, inject } from "vue";
+import { ref, computed,onMounted, inject } from "vue";
 import { useGlobalStore } from "@/stores/modules/global";
 import com_defaultMain from "@/layouts/back/components/main/defaultMain.vue";
 import com_dhumanMain from "@/layouts/back/components/main/dhumanMain.vue";
+import { sliderRange } from "@/utils/slider";
 const com_main = {
   default: com_defaultMain,
   dhuman: com_dhumanMain,
@@ -312,6 +319,7 @@ const value3 = ref(true);
 const value4 = ref(1);
 const src = ref("");
 const color = ref();
+const range = ref([4, 8]);
 const list = [
   {
     value: "Option1",
@@ -326,6 +334,11 @@ const list = [
     label: "Option3",
   },
 ];
+
+onMounted(()=>{
+  sliderRange({selector:"#slider1"});
+});
+
 </script>
 
 <style scoped></style>
