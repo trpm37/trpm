@@ -253,7 +253,7 @@
                     <div class="img-up img-up2">
                       <div class="lf">
                         <div class="img-d">
-                          <el-image class="img" :src="src">
+                          <el-image class="img-m" :src="src">
                             <template #error>
                               <div class="img-error"></div>
                             </template>
@@ -277,7 +277,7 @@
                     </div>
                     <div class="img-up mg-t">
                       <div class="img-d img-1_2">
-                        <el-image class="img" :src="src">
+                        <el-image class="img-m" :src="img1">
                           <template #error>
                             <div class="img-error"></div>
                           </template>
@@ -316,6 +316,7 @@ import { useGlobalStore } from "@/stores/modules/global";
 import com_defaultMain from "@/layouts/back/components/main/defaultMain.vue";
 import com_dhumanMain from "@/layouts/back/components/main/dhumanMain.vue";
 import { slider,sliderRange,sliderRange2 } from "@/utils/slider";
+import img1 from  '@/assets/images/404.png';
 const com_main = {
   default: com_defaultMain,
   dhuman: com_dhumanMain,
