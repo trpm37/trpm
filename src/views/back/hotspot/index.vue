@@ -187,9 +187,21 @@
                       <el-slider v-model="value4" show-input size="small" :show-tooltip="false"/>
                     </div>
                     <div class="card-sub_tl cell mg-t">
-                      <div class="lf"><span class="lab">范围</span></div>
+                      <div class="lf"><span class="lab">长度</span></div>
                     </div>
                     <div class="drag-bar" id="slider1">
+    
+                    </div>
+                    <div class="card-sub_tl cell mg-t">
+                      <div class="lf"><span class="lab">范围</span></div>
+                    </div>
+                    <div class="drag-bar" id="slider2">
+    
+                    </div>
+                    <div class="card-sub_tl cell mg-t">
+                      <div class="lf"><span class="lab">范围2</span></div>
+                    </div>
+                    <div class="drag-bar" id="slider3">
     
                     </div>
                     <div class="cell mg-t">
@@ -303,7 +315,7 @@ import { ref, computed,onMounted, inject } from "vue";
 import { useGlobalStore } from "@/stores/modules/global";
 import com_defaultMain from "@/layouts/back/components/main/defaultMain.vue";
 import com_dhumanMain from "@/layouts/back/components/main/dhumanMain.vue";
-import { sliderRange } from "@/utils/slider";
+import { slider,sliderRange,sliderRange2 } from "@/utils/slider";
 const com_main = {
   default: com_defaultMain,
   dhuman: com_dhumanMain,
@@ -336,7 +348,42 @@ const list = [
 ];
 
 onMounted(()=>{
-  sliderRange({selector:"#slider1"});
+  slider({
+    selector:"#slider1",
+    min:-200,
+    max:-100,
+    // val:20,
+    callBack:function(res){
+      console.log('move：',res);
+    },
+    endCallBack:function(res){
+      console.log('end：',res);
+    }
+  });
+  sliderRange({
+    selector:"#slider2",
+    lf_val:10,
+    rg_val:90,
+    // isInp:false,
+    callBack:function(res){
+      console.log('move：',res);
+    },
+    endCallBack:function(res){
+      console.log('end：',res);
+    }
+  });
+  sliderRange2({
+    selector:"#slider3",
+    lf_val:10,
+    rg_val:90,
+    ct_val:20,
+    callBack:function(res){
+      console.log('move：',res);
+    },
+    endCallBack:function(res){
+      console.log('end：',res);
+    }
+  });
 });
 
 </script>
