@@ -103,3 +103,90 @@ export const errorRouter = [
   }
 ];
 
+/**
+ * testRouter (测试页面路由)
+ */
+export const testRouter = [
+  {
+    path: "/t",
+    name: "test",
+    component: () => import("@/views/test/index.vue"),
+    children:[
+      {
+        path: "/t/comVal",
+        name: "comVal",
+        component: () => import("@/views/test/component-val.vue")
+      },
+      {
+        path: "/t/comIs",
+        name: "comIs",
+        component: () => import("@/views/test/component-is.vue")
+      },
+      {
+        path: "/t/comGlobal",
+        name: "comGlobal",
+        component: () => import("@/views/test/component-global.vue")
+      }
+    ]
+  },
+  {
+    path: "/t/baseFun",
+    name: "baseFun",
+    component: () => import("@/views/test/base.vue")
+  },
+  {
+    path: "/t/slot",
+    name: "slot",
+    component: () => import("@/views/test/slot.vue")
+  },
+  {
+    path: "/t/computed",
+    name: "computed",
+    component: () => import("@/views/test/computed.vue")
+  },
+  {
+    path: "/t/watch",
+    name: "watch",
+    component: () => import("@/views/test/watch.vue")
+  },
+  {
+    path: "/t/callback",
+    name: "callback",
+    component: () => import("@/views/test/callback.vue")
+  },
+  {
+    path: "/t/r",
+    name: "router",
+    component: () => import("@/views/test/router/index.vue"),
+    // redirect: "t",
+    children: [
+      {
+        path: "/t/r/a",
+        name: "router-a",
+        component: () => import("@/views/test/router/a.vue"),
+        meta: {
+          title: "测试a",
+          isFull: false,
+          isKeepAlive: false
+        }
+      },
+      {
+        path: "/t/r/b",
+        name: "router-b",
+        component: () => import("@/views/test/router/b.vue"),
+        meta: {
+          title: "测试b",
+          isFull: false,
+          isKeepAlive: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/t/editor",
+    name: "editor",
+    component: () => import("@/views/test/tinymce.vue")
+  },
+];
+
+
