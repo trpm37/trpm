@@ -1,10 +1,10 @@
 <template>
   <div class="page">
     <p>测试路由test/router/index页面</p>
-    <router-link to="/t/r/a" class="router">a</router-link>
-    <router-link to="/t/r/b" class="router">b</router-link>
-    <router-link to="/t/r/c" class="router">c</router-link>
-    <router-link to="/t/r/d" class="router">d</router-link>
+    <router-link to="/test/router/a" class="router">a</router-link>
+    <router-link to="/test/router/b" class="router">b</router-link>
+    <router-link to="/test/router/c" class="router">c</router-link>
+    <router-link to="/test/router/d" class="router">d</router-link>
     <!-- <router-view></router-view> -->
     <router-view v-slot="{ Component, route }">
       <component :is="Component" :key="route.fullPath" />

@@ -19,13 +19,15 @@ export const initDynamicRouter = async () => {
     authStore.setAuthInfo({
       expires: "1",
     });
+
     let item={
-      path: "/test",
-      name: "test",
-      component: () => import("@/views/back/test.vue")
+      path: "/test/temp",
+      name: "test-temp",
+      component: () => import("@/views/test/temp.vue")
     };
     await router.addRoute(item);
-    // await router.addRoute('admin', item);
+    // await router.addRoute('test', item);
+
   } catch (error) {
     // 当按钮 || 菜单请求出错时，重定向到登陆页
     userStore.setToken("");

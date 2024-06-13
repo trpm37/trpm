@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { DEFAULT_PRIMARY } from "@/config";
-import piniaPersistConfig from "@/stores/helper/persist";
+// import piniaPersistConfig from "@/stores/helper/persist";
 
 export const useGlobalStore = defineStore({
   id: "3d-global",
