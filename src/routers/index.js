@@ -3,7 +3,7 @@ import { useUserStore } from "@/stores/modules/user";
 import { useAuthStore } from "@/stores/modules/auth";
 import { LOGIN_URL, ROUTER_WHITE_LIST } from "@/config";
 import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
-import {  errorRouter,otherRouter, threeDRouter,threeD2Router,humanRouter, testRouter } from "@/routers/modules/staticRouter";
+import {  errorRouter,webRouter, threeDRouter,adminRouter,humanRouter, testRouter } from "@/routers/modules/staticRouter";
 import NProgress from "@/config/nprogress";
 
 const mode = import.meta.env.VITE_ROUTER_MODE;
@@ -31,7 +31,7 @@ const routerMode = {
  * */
 const router = createRouter({
   history: routerMode[mode](),
-  routes: [...errorRouter, ...otherRouter, ...threeDRouter, ...threeD2Router, ...humanRouter, ...testRouter],
+  routes: [...errorRouter, ...webRouter, ...threeDRouter, ...adminRouter, ...humanRouter, ...testRouter],
   strict: false,
   scrollBehavior: () => ({ left: 0, top: 0 })
 });
