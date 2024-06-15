@@ -1,6 +1,6 @@
 <template>
   <div class="edit-plane">
-    <div class="box flex-column">数字人 编辑</div>
+    <div class="box flex-column">ai问答 编辑</div>
   </div>
 </template>
 

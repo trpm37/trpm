@@ -25,7 +25,7 @@
 import { computed } from 'vue';
 // import { useRoute } from "vue-router";
 import { threeDStore } from "@/stores/threeD/threeD";
-import com_lf_menu from "@/views/threeD/edit/layout/components/menu/defaultMenu.vue";
+import com_lf_menu from "@/views/threeD/edit/layout/components/menu/lfMenu.vue";
 
 import com_scene_subMenu from "@/views/threeD/edit/scene/subMenu.vue";
 import com_hotspot_subMenu from "@/views/threeD/edit/hotspot/subMenu.vue";

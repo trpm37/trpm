@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-vertical">
+  <div class="layout-default">
     <el-container class="layout-container">
       <el-header class="layout-top cell">
         <div class="lf"><span class="name">元宇宙</span></div>
@@ -16,18 +16,16 @@
         </div>
       </el-header>
       <el-main class="layout-main">
-        <router-view v-slot="{ Component, route }">
-          <component :is="Component" />
-        </router-view>
+        <com_main/>
       </el-main>
     </el-container>
   </div>
 </template>
 
 <script setup>
-// import { ref } from 'vue';
-</script>
+import com_main from "@/views/threeD/edit/layout/default/components/main.vue";
 
+</script>
 <style>
 @import "./index.scss";
 </style>

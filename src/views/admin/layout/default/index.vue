@@ -34,8 +34,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import com_lf_menu from "@/views/admin/layout/components/menu.vue";
-import com_main from "@/views/admin/layout/components/main/defaultMain.vue";
+import com_lf_menu from "@/views/admin/layout/components/menu/lfMenu.vue";
+import com_main from "@/views/admin/layout/default/components/main.vue";
 
 const menuData = ref([  
   {

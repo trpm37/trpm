@@ -5,14 +5,14 @@
         <template #title>
           <span>{{ item.title }}</span>
         </template>
-        <default-menu :menu-data="item.children" />
+        <lf-menu :menu-data="item.children" />
       </el-sub-menu>
       <el-menu-item v-else :index="item.id"  @click="handleClickMenu(item)">{{ item.title }}</el-menu-item>
     </template>
 </template>
 
 <script setup>
-import { ref } from "vue";
+// import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();

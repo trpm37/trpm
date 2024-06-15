@@ -22,7 +22,7 @@
 import { computed } from 'vue';
 // import { useRoute } from "vue-router";
 import { humanStore } from "@/stores/human/human";
-import com_lf_menu from "@/views/human/edit/layout/components/menu.vue";
+import com_lf_menu from "@/views/human/edit/layout/components/lfMenu.vue";
 
 import com_ui_subMenu from "@/views/human/edit/ui/subMenu.vue";
 import com_character_subMenu from "@/views/human/edit/character/subMenu.vue";

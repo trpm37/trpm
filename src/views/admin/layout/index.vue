@@ -6,8 +6,8 @@
 <script setup>
 import { computed,provide } from "vue";
 import { useGlobalStore } from "@/stores/modules/global";
-import com_layoutDefault from "./layoutDefault/index.vue";
-import com_layoutVertical from "./layoutVertical/index.vue";
+import com_layoutDefault from "./default/index.vue";
+import com_layoutVertical from "./vertical/index.vue";
 const com_layout = {
   default: com_layoutDefault,
   vertical: com_layoutVertical,
