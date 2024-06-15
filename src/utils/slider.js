@@ -1,5 +1,5 @@
 import Hammer from 'hammerjs';
-import {addStyle,getWidth,getPosition} from './index';
+import {addStyle,getWidth,getPosition} from './utils';
 
 import img1 from  '@/assets/images/drag_left.png';
 import img2 from  '@/assets/images/drag_right.png';

@@ -6,7 +6,7 @@
 <script setup>
 import { computed,provide,watch } from "vue";
 import { useRoute } from "vue-router";
-import { useGlobalStore } from "@/stores/modules/global";
+import { useGlobalStore } from "@/stores/site/global";
 import { threeDStore } from "@/stores/threeD/threeD";
 
 // 路由信息

@@ -1,4 +1,4 @@
-import { dom_parent } from "@/utils/index";
+import { dom_parent } from "@/utils/utils";
 
 /**
  * @description edit-card展开收起

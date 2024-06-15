@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
-import { useUserStore } from "@/stores/modules/user";
-import { useAuthStore } from "@/stores/modules/auth";
+import { useUserStore } from "@/stores/site/user";
+import { useAuthStore } from "@/stores/site/auth";
 import { LOGIN_URL, ROUTER_WHITE_LIST } from "@/config";
 import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
 import {  errorRouter,webRouter, threeDRouter,adminRouter,humanRouter, testRouter } from "@/routers/modules/staticRouter";

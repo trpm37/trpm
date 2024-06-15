@@ -6,12 +6,12 @@
 
 <script setup>
 import {onMounted, reactive, computed } from "vue";
-import { getBrowserLang } from "./utils";
+import { getBrowserLang } from "./utils/utils";
 import { ElConfigProvider } from "element-plus";
 import { useI18n } from "vue-i18n";
 import en from "element-plus/es/locale/lang/en";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
-import { useGlobalStore } from "./stores/modules/global";
+import { useGlobalStore } from "./stores/site/global";
 const globalStore = useGlobalStore();
 
 // init language
