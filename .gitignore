@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-3d
+trpm
 *.local
 
 # Editor directories and files

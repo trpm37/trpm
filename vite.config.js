@@ -28,9 +28,9 @@ export default defineConfig(()=>{
         '@': '/src',
       },
     },
-    base:  process.env.NODE_ENV === 'production' ? '/3d/' : '/',  //process.env.VITE_BASE_URL,
+    base:  process.env.NODE_ENV === 'production' ? '/trpm/' : '/',  //process.env.VITE_BASE_URL,
     build: {
-      outDir: '3d', // 输出目录 默认dist
+      outDir: 'trpm', // 输出目录 默认dist
     }
   }
 })
