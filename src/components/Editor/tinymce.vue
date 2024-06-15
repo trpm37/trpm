@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {watch, onMounted, onBeforeUnmount } from "vue";
 
 //接收父值
@@ -21,7 +21,7 @@ console.log("222222",props.content);
 //子给父传值
 const emit= defineEmits(["change"]);
 
-let editorObj:any = {
+let editorObj = {
   instance: null,
   key: "bhdyrdet7r4y02o78r95ibbapdcg1rv9awwxh6tnp7c5v767",
   init: {
@@ -97,7 +97,7 @@ let editorObj:any = {
     convert_urls: false,
     // autosave_ask_before_unload: true, // 在用户关闭页面或者刷新页面时询问是否保存修改过的内容
     // autosave_interval: "3s", // 自动保存的间隔时间，可以设置为一个数字（以毫秒为单位）或者一个字符串（包含单位，例如'30s'表示30秒）
-    setup: function (editor:any) {
+    setup: function (editor) {
       console.log("----编辑器初始之前-----", editor.id, editor);
       // 监听TinyMCE的change事件 'input change undo redo'
       editor.on("input change", function () {
@@ -105,7 +105,7 @@ let editorObj:any = {
         emit("change", content);
       });
       //禁用ctrl+s
-      editor.on("keydown", function (e:any) {
+      editor.on("keydown", function (e) {
         // 检测是否按下了 Ctrl + S
         if ((e.keyCode == 83 || e.keyCode == 115) && e.ctrlKey) {
           // 取消默认行为和事件传播
@@ -115,7 +115,7 @@ let editorObj:any = {
         }
       });
     },
-    init_instance_callback: function (editor:any) {
+    init_instance_callback: function (editor) {
       editorObj.instance = editor;
       // console.log("----编辑器初始之后-----", editor.id, editor);
       editor.setContent(props.content); // 设置初始值
@@ -124,7 +124,7 @@ let editorObj:any = {
     // 你需要根据实际情况将blobInfo中的图片数据上传到服务器
     // 当上传完成时，调用success方法，并传递图片的URL
     // 当上传失败时，调用failure方法，并传递一个错误消息
-    images_upload_handler: async (blobInfo:any, success:any, failure:any) => {
+    images_upload_handler: async (blobInfo, success, failure) => {
       console.log("----自定义的图片上传处理函数-----",blobInfo);
       success("https://www.baidu.com/img/bd_logo1.png");
       failure("上传失败");
@@ -139,7 +139,7 @@ let editorObj:any = {
     //   }
     },
     //自定义文件选择器的回调内容
-    file_picker_callback: function (callback:any, value:any, meta:any) {
+    file_picker_callback: function (callback, value, meta) {
       console.log("----自定义文件选择器的回调内容-----", value, meta);
       if (meta.filetype === "file") {
         callback("https://www.baidu.com/img/bd_logo1.png", { text: "My alt text" });
@@ -178,7 +178,7 @@ let editorObj:any = {
         // });
       }
     },
-    paste_postprocess: function (editor:any, args:any) {
+    paste_postprocess: function (editor, args) {
       console.log("----对粘贴的内容进行处理-----", editor.content, args);
     }
   },

@@ -1,10 +1,10 @@
 # metaverse 元宇宙项目
 
 
-# trpm37.github.io
+### 项目目录
 
 ```text
-项目目录：
+vite目录结构：
 ├── public/               # 静态资源目录
 │   ├── favicon.ico       # 网站图标
 │   └── images/           # 其他静态资源
@@ -64,4 +64,45 @@
 ├── .gitignore            # Git 忽略文件
 ├── package.json          # 项目配置文件和依赖
 └── README.md             # 项目说明文件
+```
+
+
+### 插件介绍
+
+- **vue-router：**
+
+```text
+# vue-router 是一款用于vue路由管理工具
+npm安装：npm install vue-router@4
+yarn安装：yarn add vue-router@4
+pnpm安装：pnpm add vue-router@4
+```
+
+- **pinia：**
+
+```text
+# pinia 是一款用于vue数据存储管理工具
+yarn安装：yarn add pinia
+npm安装：npm install pinia
+```
+
+- **nprogress：**
+
+```text
+# nprogress 是一款加载进度插件
+npm安装：npm install nprogress
+```
+
+- **tinymce.js：**
+
+```text
+# tinymce.js 是一款富文本编辑器 
+安装：npm install tinymce --save
+```
+
+- **hammer.js：**
+
+```text
+# hammer.js 是一触摸插件
+安装：npm install hammer --save
 ```

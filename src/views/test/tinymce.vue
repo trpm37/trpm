@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script setup lang='ts'>
+<script setup>
 import { ref } from 'vue';
 import com_tinymce from '@/components/Editor/tinymce.vue'
 
@@ -16,7 +16,7 @@ let editor_content = ref('你好!');
 
 //接收子值
 let content = ref("");
-const editor_change=(a:any)=>{
+const editor_change=(a)=>{
   console.log(a);
   content.value=a;
 }
