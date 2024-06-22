@@ -106,6 +106,14 @@ npm安装：npm install nprogress
 - **hammer.js：**
 
 ```text
-# hammer.js 是一触摸插件
+# hammer.js 触摸插件
 安装：npm install hammer --save
+```
+
+- **highlight.js：**
+
+```text
+# highlight.js 高亮插件 可用于文字/代码高亮
+安装：npm install highlight.js
+安装：yarn add highlight.js
 ```
