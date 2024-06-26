@@ -213,6 +213,11 @@ export const testRouter = [
     name: "test-editor",
     component: () => import("@/views/test/tinymce.vue"),
   },
+  {
+    path: "/test/recorder",
+    name: "test-recorder",
+    component: () => import("@/views/test/recorder/recorder.vue"),
+  }
 ];
 
 /**

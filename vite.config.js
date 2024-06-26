@@ -31,6 +31,12 @@ export default defineConfig(()=>{
     base:  process.env.NODE_ENV === 'production' ? '/trpm/' : '/',  //process.env.VITE_BASE_URL,
     build: {
       outDir: 'trpm', // 输出目录 默认dist
+    },
+    server: {
+      https: {
+        key: 'E:/key/key.pem',
+        cert: 'E:/key/cert.pem',
+      }
     }
   }
 })

@@ -15,6 +15,9 @@
     <div>
       <router-link to="/test/editor" class="router">编辑器</router-link>
     </div>
+    <div>
+      <router-link to="/test/recorder" class="router">语音输入</router-link>
+    </div>
     <!-- <router-view></router-view> -->
     <router-view v-slot="{ Component, route }">
       <component :is="Component" :key="route.fullPath" />
