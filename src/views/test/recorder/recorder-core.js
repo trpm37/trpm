@@ -401,6 +401,7 @@ let Connect = function (streamStore, isUserMedia) {
           onReceive(arr);
         }); //立即退出回调，试图减少对浏览器录音的影响
       } else {
+        console.log("2222222222222222222",float32Arr);
         onReceive(arr);
       }
     };
@@ -617,6 +618,7 @@ let Connect = function (streamStore, isUserMedia) {
     );
     let mr = (stream._r = new MR(stream, mrSet));
     let webmData = (stream._rd = { sampleRate: ctx[sampleRateTxt] });
+    console.log(stream,stream._rd,sampleRateTxt,ctx[sampleRateTxt],webmData);
     mr[onData] = function (e) {
       //提取webm中的pcm数据，提取失败就等着badInt超时降级处理
       let reader = new FileReader();
@@ -1490,6 +1492,7 @@ initFn.prototype = {
 
 //=======从WebM字节流中提取pcm数据，提取成功返回Float32Array，失败返回null||-1=====
 let WebM_Extract = function (inBytes, scope) {
+  console.log("字节流中提取pcm数据",scope,inBytes);
   if (!scope.pos) {
     scope.pos = [0];
     scope.tracks = {};
