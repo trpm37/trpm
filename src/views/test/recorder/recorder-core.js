@@ -371,7 +371,7 @@ let Connect = function (streamStore, isUserMedia) {
     isWorklet = stream.isWorklet = false;
     _Disconn_n(stream);
     console.log(
-      "Connect采用老 的" +
+      "Connect采用老的" +
         scriptProcessor +
         "，" +
         (Recorder.ConnectEnableWorklet ? "但已" : "可") +
