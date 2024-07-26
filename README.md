@@ -69,6 +69,24 @@ vite目录结构：
 └── README.md             # 项目说明文件
 ```
 
+### 工具介绍
+
+- **npm：**
+
+```text
+# npm 是
+更新npm最新的版本：npm install -g npm@latest
+清理 npm 缓存：ynpm cache clean --force
+版本检测：npm -v
+```
+
+- **pnpm：**
+
+```text
+# pnpm 是
+安装：npm install -g pnpm
+版本检测：pnpm -v
+```
 
 ### 插件介绍
 
