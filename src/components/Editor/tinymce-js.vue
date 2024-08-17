@@ -26,9 +26,9 @@ let editorObj = {
   instance: null,
   key: "bhdyrdet7r4y02o78r95ibbapdcg1rv9awwxh6tnp7c5v767",
   init: {
-    base_url: "/tinymce", // 添加此行配置资源路径 "/node_modules/tinymce"
+    base_url: "/static/tinymce", // 添加此行配置资源路径 "/node_modules/tinymce"
     language: "zh_CN",
-    language_url: "/tinymce/langs/zh_CN.js", // 设置语言包的路径
+    language_url: "/static/tinymce/langs/zh_CN.js", // 设置语言包的路径
     selector: "#tinymce-editor",
     height: "100%",
     branding: false,
@@ -188,7 +188,7 @@ let editorObj = {
 // 加载 编辑器脚本和样式
 const loadTinyMCE=()=> {
   const script = document.createElement('script');
-  script.src = '/tinymce/tinymce.min.js'; // 假设 TinyMCE 放在 public/tinymce/ 目录下
+  script.src = '/static/tinymce/tinymce.min.js'; // 假设 TinyMCE 放在 public/static/tinymce/ 目录下
   script.async = true;
   script.onload = () => {
     console.log('TinyMCE loaded!');
@@ -199,7 +199,7 @@ const loadTinyMCE=()=> {
   // // 加载 TinyMCE 样式（如果需要）
   // const link = document.createElement('link');
   // link.rel = 'stylesheet';
-  // link.href = '/tinymce/skins/ui/oxide/skin.min.css'; // 根据你的 TinyMCE 版本和配置调整路径
+  // link.href = '/static/tinymce/skins/ui/oxide/skin.min.css'; // 根据你的 TinyMCE 版本和配置调整路径
   // document.head.appendChild(link);
 }
 

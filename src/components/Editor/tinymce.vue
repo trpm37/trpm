@@ -25,9 +25,9 @@ let editorObj = {
   instance: null,
   key: "bhdyrdet7r4y02o78r95ibbapdcg1rv9awwxh6tnp7c5v767",
   init: {
-    base_url: "/tinymce", // 添加此行配置资源路径 "/node_modules/tinymce"
+    base_url: "/static/tinymce", // 添加此行配置资源路径 "/node_modules/tinymce"
     language: "zh_CN",
-    language_url: "/tinymce/langs/zh_CN.js", // 设置语言包的路径
+    language_url: "/static/tinymce/langs/zh_CN.js", // 设置语言包的路径
     selector: "#tinymce-editor",
     height: "100%",
     branding: false,
