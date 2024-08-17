@@ -9,10 +9,10 @@
 ```text
 vite目录结构：
 ├── public/               # 静态资源目录
+│   ├── static/ 
+│   │   ├── iconfont/      # 字体
+│   │   └── tinymce/       # 编辑器插件
 │   ├── favicon.ico       # 网站图标
-│   └── images/           # 其他静态资源
-│   └── styles/           # 静态样式文件
-│   ├── ***.html          # HTML 模板文件
 ├── src/                  # 项目源代码目录
 │   ├── assets/           # 项目全局资源模块
 │   │   ├── images/       # 项目图片资源
@@ -47,20 +47,25 @@ vite目录结构：
 │   │   ├── slider.js           # 滑块
 │   │   ├── errorHandler.js     # 全局代码错误捕捉
 │   ├── views/            # 项目页面目录
-│   │   ├── web/          # 站点页面
-│   │   ├── login/        # 站点登录页面
-│   │   ├── admin/        # 后台管理项目
-│   │   │   ├── layout/   # 布局页面
-│   │   │   └── ...       # 其他前台页面
-│   │   ├── threeD/       # 3d项目
-│   │   │   ├── layout/   # 布局页面
-│   │   │   └── ...       # 其他后台页面
-│   │   ├── human/        # 数字人项目
-│   │   │   ├── layout/   # 布局页面
-│   │   │   └── ...       # 其他后台页面
-│   │   └── test/         # 用于测试项目
-│   │       └── BackLayout.vue  # 后台管理布局
-│   ├── main.js           # 入口文件
+│   │   ├── login/          # 登录页面
+│   │   ├── web/            # 前台页面
+│   │   │   ├── index       # 前台首页
+│   │   ├── admin/          # 后台管理页面
+│   │   │   ├── layout/     # 布局页面
+│   │   │   └── ...         # 其他页面
+│   │   ├── threeD/           # 3d项目
+│   │   │   ├── edit/         # 后台页面
+│   │   │   │   ├── layout/   # 布局页面
+│   │   │   │   └── ...       # 其他页面
+│   │   │   └── preview/      # 前台页面
+│   │   ├── human/            # 数字人项目
+│   │   │   ├── edit/         # 后台页面
+│   │   │   │   ├── layout/   # 布局页面
+│   │   │   │   └── ...       # 其他页面
+│   │   │   └── preview/      # 前台页面
+│   │   └── test/          # 用于测试项目
+│   │       └── index.vue  # 测试首页
+│   ├── main.js           # 入口 js 文件
 │   ├── App.vue           # 根组件
 ├── index.html            # 入口 HTML 文件
 ├── vite.config.js        # Vite 配置文件
