@@ -26,7 +26,7 @@
 <script setup>
 import { provide,watch } from "vue";
 import { useRoute } from "vue-router";
-import { useGlobalStore } from "@/stores/site/global";
+// import { useGlobalStore } from "@/stores/site/global";
 import { humanStore } from "@/stores/human/human";
 import com_main from "@/views/human/edit/layout/components/main.vue";
 
